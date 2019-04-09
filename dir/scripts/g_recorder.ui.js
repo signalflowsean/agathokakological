@@ -3,6 +3,7 @@
 
 const gestureRecorderUI = () => { 
   const render = () => { 
+
     switch(store.currState) { 
       case 'ready': 
         //hide recording
@@ -23,7 +24,6 @@ const gestureRecorderUI = () => {
         //showing recording
         break; 
     }
-
   }; 
 
   const getGestureNameFromElement = (item) => {
