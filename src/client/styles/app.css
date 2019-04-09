@@ -8,3 +8,9 @@ video {
   height: 100vh; 
   object-fit: cover; 
 }
+
+#js-add-gesture{ 
+  position: absolute;
+  top: 2%;
+  right: 2%; 
+}

@@ -2,14 +2,16 @@
 'use strict'
 
 const gestureRecorderUI = (() => { 
+
   const render = () => { 
+    console.log('curr', store.currState); 
     let html = ''; 
     switch(store.currState) { 
       case 'ready': 
-        //show add gesture button
         html = generateReadyStateHTML();
         break;
       case 'naming': 
+        console.log('naming');  
         html = generateNamingStateHTML(); 
         //add gesture name input field
         //add gesture name submit button
@@ -28,12 +30,11 @@ const gestureRecorderUI = (() => {
   }; 
 
   const generateReadyStateHTML = () => { 
-    console.log('hello')
-    return 'ready'; 
+    return "<button id='js-add-gesture'>+</button>"; 
   };
   const generateNamingStateHTML = () => { 
-
-    return 'naming'; 
+    console.log('yoo')
+    return "<input><input>" 
   }; 
 
 
@@ -44,15 +45,16 @@ const gestureRecorderUI = (() => {
   const generateRecordingStateHTML = () => { 
     return 'recording'; 
   }; 
+
   const getGestureNameFromElement = (item) => {
     const name = $(item).closest('#js-gesture-name').input(); 
     return name; 
   }
 
   const handleNewGestureClick = () => { 
-    $('#js-add-gesture').on('click', e => { 
-      e.preventDefault(); 
+    $('#gesture-recorder').on('click', '#js-add-gesture', e => { 
       store.currState = 'naming'; 
+      render(); 
     }); 
   }; 
 

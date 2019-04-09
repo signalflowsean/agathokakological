@@ -8,4 +8,4 @@ const store = (() => {
     gestures: [], 
     currState: 'ready',  
   }; 
-}); 
+})(); 
