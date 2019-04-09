@@ -30,7 +30,8 @@ const gestureRecorderUI = (() => {
   };
 
   const generateNamingStateHTML = () => { 
-    return "<input type='text' id='js-gesture-name' class='js-add-gesture'><input>" 
+    return "<input type='text' id='js-gesture-name'class='js-add-gesture'></input>" + 
+    "<input type='submit' id='js-gesture-name-submit' class='js-add-gesture'></input>" 
   }; 
 
 
@@ -55,9 +56,11 @@ const gestureRecorderUI = (() => {
   }; 
 
   const handleNewGestureSubmit = () => { 
-    $('#js-submit-gesture').on('submit', e => { 
+    $('#gesture-recorder').on('submit', e => { 
+    
       e.preventDefault(); 
-      store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
+      console.log('hi')
+      // store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
       store.currState = 'counting-down'; 
     }); 
   }; 
