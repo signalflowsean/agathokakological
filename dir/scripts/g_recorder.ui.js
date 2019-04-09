@@ -3,6 +3,26 @@
 
 const gestureRecorderUI = () => { 
   const render = () => { 
+    switch(store.currState) { 
+      case 'ready': 
+        //hide recording
+        //show add gesture button
+        break;
+      case 'naming': 
+        //hide gesture button
+        //add gesture name input field
+        //add gesture name submit button
+        break; 
+      case 'counting-down': 
+        //hide gesture name input field
+        //hide gesture name submit button
+        //show countdown
+        break; 
+      case 'recording': 
+        //hide countdown
+        //showing recording
+        break; 
+    }
 
   }; 
 
