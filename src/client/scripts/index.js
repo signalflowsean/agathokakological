@@ -3,6 +3,6 @@
 
 $(document).ready(() => { 
   webcam.load(); 
-  gestureRecorderUI.bindEventListeners(); 
-  gestureRecorderUI.render(); 
+  // gestureRecorderUI.bindEventListeners(); 
+  // gestureRecorderUI.render(); 
 }); 

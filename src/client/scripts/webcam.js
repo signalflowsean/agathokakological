@@ -2,9 +2,9 @@
 'use strict'
 
 const webcam = (() => { 
-  const load = () => { 
+  function load() { 
     const webcam = $('#webcam');
-
+    
     if(navigator.mediaDevices.getUserMedia) { 
       navigator.mediaDevices.getUserMedia({video : true})
         .then(stream => webcam.srcObject = stream); 
@@ -12,4 +12,4 @@ const webcam = (() => {
   }; 
 
   return { load };
-}); 
+})(); 
