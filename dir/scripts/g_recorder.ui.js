@@ -6,6 +6,11 @@ const gestureRecorderUI = () => {
 
   }; 
 
+  const getGestureNameFromElement = (item) => {
+    const name = $(item).closest('#js-gesture-name').input(); 
+    return name; 
+  }
+
   const handleNewGestureClick = () => { 
     $('#js-add-gesture').on('click', e => { 
       e.preventDefault(); 
