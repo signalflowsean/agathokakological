@@ -4,5 +4,5 @@
 $(() => { 
   webcam.load(); 
   // gestureRecorderUI.bindEventListeners(); 
-  // gestureRecorderUI.render(); 
+  gestureRecorderUI.render(); 
 }); 

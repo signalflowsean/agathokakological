@@ -1,7 +1,7 @@
 /* global $ */ 
 'use strict'
 
-const gestureRecorderUI = () => { 
+const gestureRecorderUI = (() => { 
   const render = () => { 
     let html = ''; 
     switch(store.currState) { 
@@ -27,13 +27,15 @@ const gestureRecorderUI = () => {
     $('#gesture-recorder').html(html); 
   }; 
 
+  const generateReadyStateHTML = () => { 
+    console.log('hello')
+    return 'ready'; 
+  };
   const generateNamingStateHTML = () => { 
+
     return 'naming'; 
   }; 
 
-  const generateReadyStateHTML = () => { 
-    return 'ready'; 
-  };
 
   const generateCountingDownStateHTML = () => { 
     return 'counting'; 
@@ -68,4 +70,4 @@ const gestureRecorderUI = () => {
   }; 
 
   return { render, bindEventListeners }; 
-}; 
+})(); 
