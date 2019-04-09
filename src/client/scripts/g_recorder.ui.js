@@ -4,17 +4,13 @@
 const gestureRecorderUI = (() => { 
 
   const render = () => { 
-    console.log('curr', store.currState); 
     let html = ''; 
     switch(store.currState) { 
       case 'ready': 
         html = generateReadyStateHTML();
         break;
       case 'naming': 
-        console.log('naming');  
         html = generateNamingStateHTML(); 
-        //add gesture name input field
-        //add gesture name submit button
         break; 
       case 'counting-down': 
         html = generateCountingDownStateHTML(); 
@@ -30,11 +26,11 @@ const gestureRecorderUI = (() => {
   }; 
 
   const generateReadyStateHTML = () => { 
-    return "<button id='js-add-gesture'>+</button>"; 
+    return "<button id='js-add-gesture' class='js-add-gesture'>+</button>"; 
   };
+
   const generateNamingStateHTML = () => { 
-    console.log('yoo')
-    return "<input><input>" 
+    return "<input type='text' id='js-gesture-name' class='js-add-gesture'><input>" 
   }; 
 
 
