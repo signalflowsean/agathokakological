@@ -27,6 +27,21 @@ const gestureRecorderUI = () => {
     $('#gesture-recorder').html(html); 
   }; 
 
+  const generateNamingStateHTML = () => { 
+    return 'naming'; 
+  }; 
+
+  const generateReadyStateHTML = () => { 
+    return 'ready'; 
+  };
+
+  const generateCountingDownStateHTML = () => { 
+    return 'counting'; 
+  }; 
+
+  const generateRecordingStateHTML = () => { 
+    return 'recording'; 
+  }; 
   const getGestureNameFromElement = (item) => {
     const name = $(item).closest('#js-gesture-name').input(); 
     return name; 
