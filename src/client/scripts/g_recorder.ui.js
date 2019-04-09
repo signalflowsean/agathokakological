@@ -31,7 +31,7 @@ const gestureRecorderUI = (() => {
 
   const generateNamingStateHTML = () => { 
     return "<input type='text' id='js-gesture-name'class='js-add-gesture'></input>" + 
-    "<input type='submit' id='js-gesture-name-submit' class='js-add-gesture'></input>" 
+    "<input type='submit' id='js-gesture-name-submit' class='js-add-gesture js-submit'></input>" 
   }; 
 
 
@@ -57,9 +57,7 @@ const gestureRecorderUI = (() => {
 
   const handleNewGestureSubmit = () => { 
     $('#gesture-recorder').on('submit', e => { 
-    
       e.preventDefault(); 
-      console.log('hi')
       // store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
       store.currState = 'counting-down'; 
     }); 
