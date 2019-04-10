@@ -20,25 +20,20 @@ const gestureRecorderUI = (() => {
       generateRecordingStateHTML(constants.recordLength); 
       return; 
     } 
-
-
     renderCountDownHTML(generateCountingDownStateHTML, 'js-count-down', num); 
   }; 
-
-  const renderCountDownHTML = (countDownType, className, num) => { 
-    render(`<h2 class=${className}>${num}</h2>`);
-    setTimeout(countDownType, constants.countDownSpeed, (num-1)); 
-  }; 
-
-
 
   const generateRecordingStateHTML = (num) => { 
     if (num < 0) { 
       generateReadyStateHTML(); 
       return; 
     }
-    
     renderCountDownHTML(generateRecordingStateHTML, 'js-recording', num); 
+  }; 
+
+  const renderCountDownHTML = (countDownType, className, num) => { 
+    render(`<h2 class=${className}>${num}</h2>`);
+    setTimeout(countDownType, constants.countDownSpeed, (num-1)); 
   }; 
 
   const getGestureNameFromElement = (item) => {
