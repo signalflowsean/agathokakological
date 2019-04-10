@@ -14,7 +14,6 @@ const gestureRecorderUI = (() => {
         break; 
       case 'counting-down': 
         html = generateCountingDownStateHTML(); 
-        //show countdown
         break; 
       case 'recording': 
         html = generateRecordingStateHTML(); 
@@ -36,6 +35,7 @@ const gestureRecorderUI = (() => {
 
 
   const generateCountingDownStateHTML = () => { 
+
     return 'counting'; 
   }; 
 
@@ -44,14 +44,14 @@ const gestureRecorderUI = (() => {
   }; 
 
   const getGestureNameFromElement = (item) => {
-    const name = $(item).find('#js-gesture-name').val();       
-    return name; 
+    return $(item).find('#js-gesture-name').val();     
   }
 
   const handleNewGestureClick = () => { 
     $('#gesture-recorder').on('click', '#js-add-gesture', e => { 
       store.currState = 'naming'; 
       render(); 
+      return; 
     }); 
   }; 
 
@@ -60,6 +60,8 @@ const gestureRecorderUI = (() => {
       e.preventDefault(); 
       store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
       store.currState = 'counting-down'; 
+      render(); 
+      return; 
     }); 
   }; 
 
