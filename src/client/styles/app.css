@@ -18,3 +18,12 @@ video {
 .js-submit{ 
   right: 0%; 
 }
+
+.js-count-down-record{ 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  font-size: 90px; 
+  color: red; 
+}
+

@@ -22,7 +22,7 @@ const gestureRecorderUI = (() => {
       return;
     } 
 
-    render(`<h2>${num}</h2>`);
+    render(`<h2 class='js-count-down-record'>${num}</h2>`);
     setTimeout(generateCountingDownStateHTML, 1000, (num-1)); 
   }; 
 
@@ -32,7 +32,7 @@ const gestureRecorderUI = (() => {
       return; 
     }
 
-    render(`<h1>${num}</h1>`); 
+    render(`<h1 class='js-recording-down'>${num}</h1>`); 
     setTimeout(generateRecordingStateHTML, 1000, (num-1)); 
   }; 
 
