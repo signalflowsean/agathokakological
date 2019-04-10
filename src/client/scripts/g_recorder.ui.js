@@ -18,12 +18,12 @@ const gestureRecorderUI = (() => {
 
   const generateCountingDownStateHTML = (num) => { 
     if (num < 0) { 
-      generateRecordingStateHTML(20); 
+      generateRecordingStateHTML(constants.recordLength); 
       return;
     } 
 
     render(`<h2 class='js-count-down'>${num}</h2>`);
-    setTimeout(generateCountingDownStateHTML, 1000, (num-1)); 
+    setTimeout(generateCountingDownStateHTML, constants.countDownSpeed, (num-1)); 
   }; 
 
   const generateRecordingStateHTML = (num) => { 
@@ -44,7 +44,6 @@ const gestureRecorderUI = (() => {
     $('#gesture-recorder').on('click', '#js-add-gesture', e => { 
       store.currState = 'naming'; 
       generateNamingStateHTML(); 
-      return; 
     }); 
   }; 
 
@@ -53,8 +52,7 @@ const gestureRecorderUI = (() => {
       e.preventDefault(); 
       store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
       store.currState = 'counting-down'; 
-      generateCountingDownStateHTML(5); 
-      return; 
+      generateCountingDownStateHTML(constants.countDownLength); 
     }); 
   }; 
 
