@@ -44,7 +44,7 @@ const gestureRecorderUI = (() => {
   }; 
 
   const getGestureNameFromElement = (item) => {
-    const name = $(item).closest('#js-gesture-name').input(); 
+    const name = $(item).find('#js-gesture-name').val();       
     return name; 
   }
 
@@ -58,7 +58,7 @@ const gestureRecorderUI = (() => {
   const handleNewGestureSubmit = () => { 
     $('#gesture-recorder').on('submit', e => { 
       e.preventDefault(); 
-      // store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
+      store.gestures.push(getGestureNameFromElement(e.currentTarget)); 
       store.currState = 'counting-down'; 
     }); 
   }; 
