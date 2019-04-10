@@ -19,11 +19,19 @@ video {
   right: 0%; 
 }
 
-.js-count-down-record{ 
+.js-count-down{ 
   position: absolute; 
   top: 50%; 
   left: 50%; 
   font-size: 90px; 
   color: red; 
+}
+
+.js-recording{ 
+  position: absolute; 
+  top: 0%; 
+  left: 4%; 
+  font-size: 60px; 
+  color: green; 
 }
 
