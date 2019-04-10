@@ -15,25 +15,30 @@ const gestureRecorderUI = (() => {
     "<input type='submit' id='js-gesture-name-submit' class='js-add-gesture js-submit'></input>"); 
   }; 
 
-
   const generateCountingDownStateHTML = (num) => { 
     if (num < 0) { 
       generateRecordingStateHTML(constants.recordLength); 
       return; 
     } 
 
-    render(`<h2 class='js-count-down'>${num}</h2>`);
-    setTimeout(generateCountingDownStateHTML, constants.countDownSpeed, (num-1)); 
+
+    renderCountDownHTML(generateCountingDownStateHTML, 'js-count-down', num); 
   }; 
+
+  const renderCountDownHTML = (countDownType, className, num) => { 
+    render(`<h2 class=${className}>${num}</h2>`);
+    setTimeout(countDownType, constants.countDownSpeed, (num-1)); 
+  }; 
+
+
 
   const generateRecordingStateHTML = (num) => { 
     if (num < 0) { 
       generateReadyStateHTML(); 
       return; 
     }
-
-    render(`<h1 class='js-recording'>${num}</h1>`); 
-    setTimeout(generateRecordingStateHTML, 1000, (num-1)); 
+    
+    renderCountDownHTML(generateRecordingStateHTML, 'js-recording', num); 
   }; 
 
   const getGestureNameFromElement = (item) => {
