@@ -19,6 +19,7 @@ const gestureRecorderUI = (() => {
   const generateCountingDownStateHTML = (num) => { 
     if (num < 0) { 
       generateRecordingStateHTML(constants.recordLength); 
+      return; 
     } 
 
     render(`<h2 class='js-count-down'>${num}</h2>`);
@@ -28,6 +29,7 @@ const gestureRecorderUI = (() => {
   const generateRecordingStateHTML = (num) => { 
     if (num < 0) { 
       generateReadyStateHTML(); 
+      return; 
     }
 
     render(`<h1 class='js-recording'>${num}</h1>`); 
