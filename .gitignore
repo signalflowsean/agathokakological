@@ -1,0 +1,2 @@
+# exlude virutal env sub-directories
+venv/
