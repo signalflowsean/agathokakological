@@ -1,4 +1,8 @@
 # exlude virutal env sub-directories
 agatho/
+
+# exlude py cache dir 
 __pycache__/
+
+# exlude .env file
 .env
