@@ -1,7 +1,7 @@
 'use strict'
 
 const fileSaver = (() => { 
-  const createFolder= (folderName) => { 
+  const createFolder = (folderName) => { 
     // makeDir(folderName); 
   }; 
 

@@ -6,4 +6,5 @@
 3. Activate it: `source agatho/bin/activate`
 4. Install dependencies: `pip install -r requirements.txt`
 5. Set env variable: `export set FLASK_APP=server.py`
+`export FLASK_ENV=development`
 6. Run flask app: `flask run`
